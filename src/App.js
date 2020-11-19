@@ -1,46 +1,25 @@
 import React from "react";
-import PropTypes from 'prop-types';
+import axios from "axios";
 
-class App extends React.Component{
-  // constructors는 js를 알면 됨.
-  constructor(props) {
-    super(props);
-    console.log("hello");
-  }
+class App extends React.Component {
   state = {
-    count: 0
+    isLoading: true, // isLoading은 로딩되자마자 true
+    movies: []
   };
-  // js 코드
-  add = () => {
-    this.setState(current => ({count: current.count + 1}));
-    };
-  minus = () => {
-    this.setState(current => ({count: current.count - 1}));
-  };
+  
+  // async await 을 하는 것은 기본적으로 js에게 getMovies()가 조금 시간이 필요하고 우리는 그걸 기다려야 한다는 것을 명시한다. 
+  getMovies = async() => {
+    const movies = axios.get("https://yts-proxy.now.sh/list_movies.json");
+  }
 
+  // 이론적으로 우리가 할 일은 componentDidMount에서 data를 fetch하는 것이다.
   componentDidMount() {
-    console.log("component rendered")
-  }
-
-  componentDidUpdate() {
-    // setState를 호출하면, component를 호출하고 먼저 render를 호출한 다음 업데이트가 완료되었다고 말하면 componentDidUpdate가 실행된다. 
-    console.log("I just update!");
-  }
-
-  componentWillUnmount() {
-    // component가 떠날 때 호출된다. 하지만 브라우저 상에서는 알 길이 없네..ㅎ
-    console.log("Goodbye");
+    this.getMovies();
   }
 
   render() {
-    console.log("I'm rendering");
-    return (
-      <div>
-        <h1>The number is: {this.state.count}</h1>
-        <button onClick={this.add}>Add</button>
-        <button onClick={this.minus}>minus</button>
-      </div>
-    );
+    const { isLoading } = this.state;
+    return <div>{this.state.isLoading ? "Loading..." : "we are ready"}</div>
   }
 }
 
