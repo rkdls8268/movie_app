@@ -1,7 +1,8 @@
 import React from "react";
 
-function App(){
+function About(props){
+    console.log(props);
     return <span>About this page~~</span>
 }
 
-export default App;
+export default About;
