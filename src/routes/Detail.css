@@ -1,0 +1,56 @@
+.detail_div {
+    margin-top: 100px;
+    height: 45%;
+    display: flex;
+    justify-content: none;
+    align-items: flex-start;
+    flex-wrap: none;
+}
+
+.detail_div {
+    /* display: flex; */
+    margin-left: 100px;
+    margin-right: 100px;
+    padding: 20px;
+    font-weight: 150;
+    font-size: 1.25em;
+    border-radius: 5px;
+    background-color: white;
+    color: #5d5e64;
+    box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+      0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+}
+
+.detail_div img {
+    position: relative;
+    top: -30px;
+    max-width: 280px;
+    margin-right: 20px;
+    box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+      0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+}
+
+.text_div .detail_title {
+    font-weight: 50;
+    font-size: 1.25em;
+}
+
+.text_div p {
+    margin-top: 0;
+}
+
+.text_div .detail_year,
+.text_div .detail_genres {
+    font-size: 0.75em;
+}
+
+.text_div .detail_genres {
+    list-style-type: none;
+    padding-left: 0px;
+    /* display: flex; */
+}
+
+.detail_genres .detail_genre {
+    margin-right: 10px;
+    display: inline;
+}
