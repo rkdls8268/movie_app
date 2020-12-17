@@ -4,11 +4,11 @@ import PropTypes from "prop-types";
 import "./Movie.css";
 
 
-function Movie({year, title, summary, poster, genres}) {
+function Movie({id, year, title, summary, poster, genres}) {
     return (
         <Link to={{
-            pathname:"/movie-datail",
-            // movie를 클릭하면 다음의 정보를 movie-datail로 이동하면서 같이 보내준다.
+            pathname: `/movie/${id}`,
+            // movie를 클릭하면 다음의 정보를 movie-detail로 이동하면서 같이 보내준다.
             state: {
                 year,
                 title,
